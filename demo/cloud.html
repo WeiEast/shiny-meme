@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cloud</title>
+    <style>
+        body{
+            overflow:hidden;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        .clouds{
+            padding:100px 0;
+            background:#c9dbe9;
+            background:-webkit-linear-gradient(top,#c9dbe9 0%,#fff 100%);
+            background:-moz-linear-gradient(top,#c9dbe9 0%,#fff 100%);
+            background:-o-linear-gradient(top,#c9dbe9 0%,#fff 100%);
+            background:linear-gradient(top,#c9dbe9 0%,#fff 100%);
+        }
+        .cloud{
+            width:200px;
+            height:60px;
+            background:#fff;
+            border-radius:200px;
+            position:relative;
+
+        }
+        .cloud:before,.cloud:after{
+            content: "";
+
+            background:#fff;
+            width:100px;
+            height:80px;
+            border:1px solid #fff;
+
+            border-radius:100px;
+
+
+            position:absolute;
+            top:-15px;
+            left:10px;
+
+            -webkit-transform:rotate(30deg);
+            -mox-transform:rotate(30deg);
+            -o-transform:rotate(30deg);
+            transform:rotate(30deg);
+        }
+        .cloud:after{
+            width:120px;
+            height:120px;
+            top:-55px;
+            left:auto;
+            right:15px;
+        }
+
+
+        .x1{
+            -webkit-animation:moveclouds 20s linear infinite;
+            -moz-animation:moveclouds 20s linear infinite;
+            -o-animation:moveclouds 20s linear infinite;
+            animation:moveclouds 20s linear infinite;
+        }
+        .x2{
+            left:-200px;
+            -webkit-transform:scale(0.6);
+            -moz-transform:scale(0.6);
+            -o-transform:scale(0.6);
+            transform:scale(0.6);
+            opacity:0.6;
+
+            -webkit-animation:moveclouds 30s linear infinite;
+            -moz-animation:moveclouds 30s linear infinite;
+            -o-animation:moveclouds 30s linear infinite;
+            animation:moveclouds 30s linear infinite;
+        }
+        .x3 {
+            left: -250px; top: -200px;
+
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+
+            -webkit-animation: moveclouds 34s linear infinite;
+            -moz-animation: moveclouds 34s linear infinite;
+            -o-animation: moveclouds 34s linear infinite;
+        }
+
+        .x4 {
+            left: 470px; top: -250px;
+
+            -webkit-transform: scale(0.75);
+            -moz-transform: scale(0.75);
+            transform: scale(0.75);
+            opacity: 0.75; /*opacity proportional to the size*/
+
+            -webkit-animation: moveclouds 20s linear infinite;
+            -moz-animation: moveclouds 20s linear infinite;
+            -o-animation: moveclouds 20s linear infinite;
+        }
+
+        .x5 {
+            left: -150px; top: -150px;
+
+            -webkit-transform: scale(0.8);
+            -moz-transform: scale(0.8);
+            transform: scale(0.8);
+            opacity: 0.8; /*opacity proportional to the size*/
+
+            -webkit-animation: moveclouds 20s linear infinite;
+            -moz-animation: moveclouds 20s linear infinite;
+            -o-animation: moveclouds 20s linear infinite;
+        }
+
+        @-webkit-keyframes moveclouds{
+            0%{
+                margin-left:100%;
+            }
+            100%{
+                margin-left:-100%;
+            }
+        }
+        @-moz-keyframes moveclouds{
+            0%{
+                margin-left:100%;
+            }
+            100%{
+                margin-left:-1000px;
+            }
+        }
+        @-o-keyframes moveclouds{
+            0%{
+                margin-left:100%;
+            }
+            100%{
+                margin-left:-100%;
+            }
+        }
+        @keyframes moveclouds{
+            0%{
+                margin-left:100%;
+            }
+            100%{
+                margin-left:-100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="clouds">
+        <div class="cloud x1"></div>
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+    </div>
+</body>
+</html>
