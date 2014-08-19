@@ -6,8 +6,9 @@ shiny-meme
 ##HTML5 to do:
 
 
-[Quick Guide to Implementing the HTML5 Audio Tag](http://www.html5rocks.com/en/tutorials/audio/quick/)
-[Getting Started with Web Audio API](http://www.html5rocks.com/en/tutorials/webaudio/intro/)
+* [Quick Guide to Implementing the HTML5 Audio Tag](http://www.html5rocks.com/en/tutorials/audio/quick/)
+
+* [Getting Started with Web Audio API](http://www.html5rocks.com/en/tutorials/webaudio/intro/)
 []()
 
 
