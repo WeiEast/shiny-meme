@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        // metaData
+
         concat: {
             options: {
                 separator: ';'
@@ -16,12 +18,12 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'static/build/scripts/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'build/javascripts/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },
         jshint: {
-            files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+            files: ['gruntfile.js', 'static/src/**/*.js', 'test/**/*.js'],
             options: {
                 globals: {
                     jQuery: true,
@@ -31,8 +33,31 @@ module.exports = function(grunt) {
                 }
             }
         },
-		sass:{
-		},
+        less: {
+            development: {
+                options: {
+                    paths: ["src/less"]
+                },
+                files: {
+                    "build/css/<%= pkg.name %>.css": "src/less/*.less"
+                    // "static/build/css/<%= pkg.name %>.css": "static/assets/less/*.less"
+                }
+            },
+            production: {
+                options: {
+                    cleancss: true,
+                    paths: ["src/less"],
+                    modifyVars: {
+                        imgPath: '"http://mycdn.com/path/to/images"',
+                        bgColor: 'red'
+                    }
+                },
+                files: {
+                    "build/css/<%= pkg.name %>.min.css": "src/less/*.less"
+                    // "static/build/css/<%= pkg.name %>.css": "static/assets/less/*.less"
+                }
+            }
+        },
         watch: {
             scripts: {
                 files: ['src/**/*.js'],
@@ -42,8 +67,8 @@ module.exports = function(grunt) {
                 }
             },
             css: {
-                files: ["src/**/*.scss"],
-                tasks: ["sass"],
+                files: ["src/**/*.less"],
+                tasks: ["less"],
                 options: {
                     debounceDelay: 0,
                 }
@@ -55,8 +80,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
 
     grunt.registerTask('test', ['jshint', 'watch']);
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'less']);
 };
