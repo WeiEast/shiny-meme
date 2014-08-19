@@ -11,5 +11,5 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 
-.idea
+.idea/
 .DS_Store
