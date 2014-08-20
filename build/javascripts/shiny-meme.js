@@ -65,13 +65,16 @@ window.onload = function() {
         var winH=document.body.clientHeight;
         var scrollTop = document.body.scrollTop;
         console.log(scrollTop);
-        if (scrollTop >= winH && scrollTop < winH * 2) {
-            document.getElementById("main-sections").style.backgroundColor = "orange";
+        var container=document.getElementById("main-sections");
+        if (scrollTop < winH) {
+            container.style.backgroundColor = "rgb(168, 203, 213)";
+        }else if (scrollTop >= winH && scrollTop < winH * 2) {
+            container.style.backgroundColor = "rgb(238, 126, 114)";
         }else if (scrollTop >= winH *2 && scrollTop < winH * 3) {
-            document.getElementById("main-sections").style.backgroundColor = "blue";
+            container.style.backgroundColor = "rgb(228, 190, 108)";
         }
         else if (scrollTop >= winH *3 && scrollTop < winH * 4) {
-            document.getElementById("main-sections").style.backgroundColor = "black";
+            container.style.backgroundColor = "rgb(156, 145, 191)";
         }
     };
 };

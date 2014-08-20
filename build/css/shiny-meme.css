@@ -11,11 +11,11 @@ body {
 }
 #main-sections {
   height: 400%;
-  background: #a8cbd5;
-  -webkit-transition: all 2s ;
-  -moz-transition: all 2s ;
-  -o-transition: all 2s ;
-  transition: all 2s ;
+  background: #a8cbd5 url(../images/dirt.png) repeat left top;
+  -webkit-transition: all 1.5s ;
+  -moz-transition: all 1.5s ;
+  -o-transition: all 1.5s ;
+  transition: all 1.5s ;
 }
 .section {
   width: 100%;
