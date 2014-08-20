@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            files: ['gruntfile.js', 'static/src/**/*.js', 'test/**/*.js'],
+            files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
             options: {
                 globals: {
                     jQuery: true,

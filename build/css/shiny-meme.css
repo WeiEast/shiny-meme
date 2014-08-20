@@ -12,6 +12,10 @@ body {
 #main-sections {
   height: 400%;
   background: #a8cbd5;
+  -webkit-transition: all 2s ;
+  -moz-transition: all 2s ;
+  -o-transition: all 2s ;
+  transition: all 2s ;
 }
 .section {
   width: 100%;
