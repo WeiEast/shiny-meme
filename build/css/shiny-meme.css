@@ -1,5 +1,6 @@
 html,
-body {
+body,
+h1 {
   padding: 0;
   margin: 0;
 }
@@ -9,9 +10,10 @@ body {
   height: 100%;
 }
 #main-sections {
-  padding: 1px ;
+  height: 400%;
+  background: #a8cbd5;
 }
 .section {
   width: 100%;
-  height: 100%;
+  height: 25%;
 }
