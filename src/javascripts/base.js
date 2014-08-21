@@ -1,4 +1,6 @@
 (function() {
+
+
     var shiny = {};
     var _s_ = shiny;
 
@@ -20,6 +22,8 @@
 
     shiny.namespace("Dom");
     shiny.namespace("Event");
+    shiny.namespace("Constant");
+
 
 
     shiny.namespace("Event.addLoadEvent");
@@ -58,6 +62,13 @@
         }
     };
 
+    shiny.Constant.backgroundColor=[
+        "rgb(168, 203, 213)",
+        "rgb(238, 126, 114)",
+        "rgb(228, 190, 108)",
+        "rgb(156, 145, 191)"
+    ];
+
 })();
 
 window.onload = function() {
@@ -76,7 +87,7 @@ window.onload = function() {
             container.style.top=top+"%";
         }
         var posotion = container.style.top;
-        if (posotion === "0") {
+        if (posotion == "0") {
             container.style.backgroundColor = "rgb(168, 203, 213)";
         } else if (posotion == "-100%") {
             container.style.top="-100%";
@@ -90,3 +101,4 @@ window.onload = function() {
         }
     });
 };
+
