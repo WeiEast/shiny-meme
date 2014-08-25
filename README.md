@@ -1,7 +1,9 @@
 shiny-meme
 ==========
 
-shiny-meme
+正在制作的个人在线简历+正在学习的酷炫DEMO
+
+目前那个土掉渣的主页请戳[这里](http://ncuey.sinaapp.com/CrispElite/)
 
 ##HTML5 to do:
 
