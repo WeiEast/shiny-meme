@@ -62,7 +62,7 @@
         }
     };
 
-    shiny.Constant.backgroundColor=[
+    shiny.Constant.backgroundColor = [
         "rgb(168, 203, 213)",
         "rgb(238, 126, 114)",
         "rgb(228, 190, 108)",
@@ -75,30 +75,29 @@ window.onload = function() {
     var winH = document.body.clientHeight;
     var scrollTop = document.body.scrollTop;
     var container = document.getElementById("main-sections");
-    container.style.top="0";
+    container.style.top = "0";
     window.onscroll = function() {
 
     };
 
     $('body').on('mousewheel', function(event) {
         var deltaY = -(event.deltaY);
-        if(deltaY >= 5){
-            var top = parseInt(container.style.top, 10)-100;
-            container.style.top=top+"%";
+        if (deltaY >= 5) {
+            var top = parseInt(container.style.top, 10) - 100;
+            container.style.top = top + "%";
         }
         var posotion = container.style.top;
         if (posotion == "0") {
             container.style.backgroundColor = "rgb(168, 203, 213)";
         } else if (posotion == "-100%") {
-            container.style.top="-100%";
+            container.style.top = "-100%";
             container.style.backgroundColor = "rgb(238, 126, 114)";
         } else if (posotion == "-200%") {
-            container.style.top="-200%";
+            container.style.top = "-200%";
             container.style.backgroundColor = "rgb(228, 190, 108)";
         } else if (posotion == "-300%") {
-            container.style.top="-300%";
+            container.style.top = "-300%";
             container.style.backgroundColor = "rgb(156, 145, 191)";
         }
     });
 };
-
