@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>make-an-accordian-style-slider-in-css3</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background: #ccc;
+        font-family: Arial, Verdana, Tahoma
+    }
+    .accordian {
+        width: 800px;
+        height: 320px;
+        overflow: hidden;
+        margin: 100px auto;
+        -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+        -o-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+    }
+    .accordian ul {
+        width:2000px;
+    }
+    .accordian li {
+        position: relative;
+        display: block;
+        width: 160px;
+        float: left;
+        border-left: 1px solid #888;
+        -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+        -o-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    .accordian ul:hover li {
+        width: 40px;
+    }
+    .accordian ul li:hover {
+        width: 640px;
+    }
+    .accordian li img {
+        display: block;
+    }
+    .image-title {
+        width: 640px;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .image-title a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 16px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="accordian">
+        <ul>
+            <li>
+                <div class="image-title"><a href="http://ncuey-crispelite.stor.sinaapp.com/1.jpg">Wall-E</a>
+                </div>
+                <a href="">
+                    <img src="http://ncuey-crispelite.stor.sinaapp.com/1.jpg" alt="Wall-E">
+                </a>
+            </li>
+            <li>
+                <div class="image-title"><a href="http://ncuey-crispelite.stor.sinaapp.com/2.jpg">KungFu Panda</a>
+                </div>
+                <a href="">
+                    <img src="http://ncuey-crispelite.stor.sinaapp.com/2.jpg" alt="KungFu Panda">
+                </a>
+            </li>
+            <li>
+                <div class="image-title"><a href="http://ncuey-crispelite.stor.sinaapp.com/3.jpg">Cars 2</a>
+                </div>
+                <a href="">
+                    <img src="http://ncuey-crispelite.stor.sinaapp.com/3.jpg" alt="Cars 2">
+                </a>
+            </li>
+            <li>
+                <div class="image-title"><a href="http://ncuey-crispelite.stor.sinaapp.com/4.jpg">Toy Story 2</a>
+                </div>
+                <a href="">
+                    <img src="http://ncuey-crispelite.stor.sinaapp.com/4.jpg" alt="Toy Story 2">
+                </a>
+            </li>
+            <li>
+                <div class="image-title"><a href="http://ncuey-crispelite.stor.sinaapp.com/5.jpg">Up</a>
+                </div>
+                <a href="">
+                    <img src="http://ncuey-crispelite.stor.sinaapp.com/5.jpg" alt="Up">
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
