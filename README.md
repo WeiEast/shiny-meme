@@ -20,7 +20,7 @@ shiny-meme
 
 ~~[CSS3 Android Logo](http://thecodeplayer.com/walkthrough/css3-android-logo)~~
 
-[Make an accordian style slider in CSS3](http://thecodeplayer.com/walkthrough/make-an-accordian-style-slider-in-css3)
+~~[Make an accordian style slider in CSS3](http://thecodeplayer.com/walkthrough/make-an-accordian-style-slider-in-css3)~~
 
 [CSS3 image slider with stylized thumbnails](http://thecodeplayer.com/walkthrough/css3-image-slider-with-stylized-thumbnails)
 

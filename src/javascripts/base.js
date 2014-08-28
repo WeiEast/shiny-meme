@@ -77,31 +77,23 @@ window.onload = function() {
     var container = document.getElementById("main-sections");
     container.style.top = "0";
     var timer = null;
+    var isRunning = false;
     $('html').on('mousewheel', function(event) {
         var deltaY = -(event.deltaY);
         console.log(deltaY);
         var position = "";
         var top = "";
         if (deltaY == 1) {
+            var timer = setTimeout(function(){
+                isRunning = true;
+                console.log(isRunning);
+            },2000);
+            if(isRunning){
+                clearTimeout(timer);
+                isRunning = false;
+                return false;
+            }
 
-            top = parseInt(container.style.top, 10) - 100;
-            if(top <= -300){
-                top=-300;
-            }
-            container.style.top = top + "%";
-            posotion = container.style.top;
-            if (posotion == "0%") {
-                container.style.backgroundColor = "rgb(168, 203, 213)";
-            } else if (posotion == "-100%") {
-                container.style.top = "-100%";
-                container.style.backgroundColor = "rgb(238, 126, 114)";
-            } else if (posotion == "-200%") {
-                container.style.top = "-200%";
-                container.style.backgroundColor = "rgb(228, 190, 108)";
-            } else if (posotion == "-300%") {
-                container.style.top = "-300%";
-                container.style.backgroundColor = "rgb(156, 145, 191)";
-            }
         }else if (deltaY == -1){
             top = parseInt(container.style.top, 10) + 100;
             if(top >= 0){
