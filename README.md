@@ -22,7 +22,7 @@ shiny-meme
 
 ~~[Make an accordian style slider in CSS3](http://thecodeplayer.com/walkthrough/make-an-accordian-style-slider-in-css3)~~
 
-[CSS3 image slider with stylized thumbnails](http://thecodeplayer.com/walkthrough/css3-image-slider-with-stylized-thumbnails)
+~~[CSS3 image slider with stylized thumbnails](http://thecodeplayer.com/walkthrough/css3-image-slider-with-stylized-thumbnails)~~
 
 [http://thecodeplayer.com/walkthrough/ripple-click-effect-google-material-design](Recreating the ripple click effect from Google material design)
 
