@@ -78,31 +78,23 @@ window.onload = function() {
     container.style.top = "0";
     var timer = null;
     var isRunning = false;
-    $('html').on('mousewheel', function(event) {
-        var deltaY = -(event.deltaY);
-        console.log(deltaY);
+    $(container).on('mousewheel', function(event) {
+        console.log(event.deltaY);
         var position = "";
         var top = "";
+        var deltaY = event.deltaY;
         if (deltaY == 1) {
-            var timer = setTimeout(function(){
-                isRunning = true;
-                console.log(isRunning);
-            },2000);
-            if(isRunning){
-                clearTimeout(timer);
-                isRunning = false;
-                return false;
-            }
 
         }else if (deltaY == -1){
-            top = parseInt(container.style.top, 10) + 100;
-            if(top >= 0){
-                top= 0;
+            top = parseInt(container.style.top, 10) - 100;
+            if(top <= -400){
+                top= -400;
             }
             container.style.top = top + "%";
             posotion = container.style.top;
             if (posotion == "0%") {
                 container.style.backgroundColor = "rgb(168, 203, 213)";
+                return false;
             } else if (posotion == "-100%") {
                 container.style.top = "-100%";
                 container.style.backgroundColor = "rgb(238, 126, 114)";
