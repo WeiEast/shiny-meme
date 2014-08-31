@@ -70,42 +70,59 @@
     ];
 
 })();
+(function() {
+    var fakeEvent = {
+        deltaY: 0
+    };
 
-window.onload = function() {
-    var winH = document.body.clientHeight;
-    var scrollTop = document.body.scrollTop;
-    var container = document.getElementById("main-sections");
-    container.style.top = "0";
-    var timer = null;
-    var isRunning = false;
-    $(container).on('mousewheel', function(event) {
-        console.log(event.deltaY);
-        var position = "";
-        var top = "";
-        var deltaY = event.deltaY;
-        if (deltaY == 1) {
-
-        }else if (deltaY == -1){
-            top = parseInt(container.style.top, 10) - 100;
-            if(top <= -400){
-                top= -400;
-            }
-            container.style.top = top + "%";
-            posotion = container.style.top;
-            if (posotion == "0%") {
-                container.style.backgroundColor = "rgb(168, 203, 213)";
-                return false;
-            } else if (posotion == "-100%") {
-                container.style.top = "-100%";
-                container.style.backgroundColor = "rgb(238, 126, 114)";
-            } else if (posotion == "-200%") {
-                container.style.top = "-200%";
-                container.style.backgroundColor = "rgb(228, 190, 108)";
-            } else if (posotion == "-300%") {
-                container.style.top = "-300%";
-                container.style.backgroundColor = "rgb(156, 145, 191)";
-            }
+    function onMouseWheel(event, instance) {
+        if (event.deltaY < 0) {
+            instance.next(instance);
+        } else {
+            instance.prev(instance);
         }
+    }
 
-    });
-};
+    window.addEventListener("load", function() {
+
+
+        var winH = document.body.clientHeight;
+        var scrollTop = document.body.scrollTop;
+        var container = document.getElementById("main-sections");
+        container.style.top = "0";
+        var timer = null;
+        var isRunning = true;
+        $(container).on('mousewheel', function(event) {
+
+            console.log(event.deltaY);
+            // var position = "";
+            // var top = "";
+            // var deltaY = event.deltaY;
+            // if (deltaY == 1) {
+
+            // }else if (deltaY == -1){
+            //     top = parseInt(container.style.top, 10) - 100;
+            //     if(top <= -300){
+            //         top= -300;
+            //     }
+            //     container.style.top = top + "%";
+            //     posotion = container.style.top;
+            //     if (posotion == "0%") {
+            //         container.style.backgroundColor = "rgb(168, 203, 213)";
+            //         return false;
+            //     } else if (posotion == "-100%") {
+            //         container.style.top = "-100%";
+            //         container.style.backgroundColor = "rgb(238, 126, 114)";
+            //     } else if (posotion == "-200%") {
+            //         container.style.top = "-200%";
+            //         container.style.backgroundColor = "rgb(228, 190, 108)";
+            //     } else if (posotion == "-300%") {
+            //         container.style.top = "-300%";
+            //         container.style.backgroundColor = "rgb(156, 145, 191)";
+            //     }
+            // }
+
+        });
+
+    }, false);
+})();
