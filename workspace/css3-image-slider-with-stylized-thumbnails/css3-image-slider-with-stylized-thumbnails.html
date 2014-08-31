@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background: #ccc;
+    }
+    .slider {
+        width: 640px;
+
+        position: relative;
+
+        padding-top: 320px;
+
+        margin: 100px auto;
+
+        -webkit-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+        -o-box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+    }
+    .slider>img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    .slider input[name='slide_switch'] {
+        display: none;
+    }
+    .slider label {
+
+        margin: 18px 0 0 18px;
+        border: 3px solid #999;
+        float: left;
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+
+        opacity: 0.6;
+    }
+    .slider label img {
+        display: block;
+    }
+    .slider input[name='slide_switch']:checked+label {
+        border-color: #666;
+        opacity: 1;
+    }
+    .slider input[name='slide_switch'] ~ img {
+        opacity: 0;
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    .slider input[name='slide_switch']:checked+label+img {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1)
+    }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="slider">
+        <input type="radio" name="slide_switch" id="id1" />
+        <label for="id1">
+            <img src="http://ncuey-crispelite.stor.sinaapp.com/1.jpg" width="100" />
+        </label>
+        <img src="http://ncuey-crispelite.stor.sinaapp.com/1.jpg" />
+
+        <!--Lets show the second image by default on page load-->
+        <input type="radio" name="slide_switch" id="id2" checked="checked" />
+        <label for="id2">
+            <img src="http://ncuey-crispelite.stor.sinaapp.com/2.jpg" width="100" />
+        </label>
+        <img src="http://ncuey-crispelite.stor.sinaapp.com/2.jpg" />
+
+        <input type="radio" name="slide_switch" id="id3" />
+        <label for="id3">
+            <img src="http://ncuey-crispelite.stor.sinaapp.com/3.jpg" width="100" />
+        </label>
+        <img src="http://ncuey-crispelite.stor.sinaapp.com/3.jpg" />
+
+        <input type="radio" name="slide_switch" id="id4" />
+        <label for="id4">
+            <img src="http://ncuey-crispelite.stor.sinaapp.com/4.jpg" width="100" />
+        </label>
+        <img src="http://ncuey-crispelite.stor.sinaapp.com/4.jpg" />
+
+        <input type="radio" name="slide_switch" id="id5" />
+        <label for="id5">
+            <img src="http://ncuey-crispelite.stor.sinaapp.com/5.jpg" width="100" />
+        </label>
+        <img src="http://ncuey-crispelite.stor.sinaapp.com/5.jpg" />
+    </div>
+</body>
+
+</html>
