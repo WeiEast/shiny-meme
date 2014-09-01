@@ -29,6 +29,9 @@
             console.log(container.style.top);
             container.style.top = parseInt(container.style.top, 10) - 100 + "%";
         }
+        var timer = setTimeout(function(){
+            isRunning = false;
+        }, 3000);
     }
     window.addEventListener("load", function() {
 
@@ -40,6 +43,7 @@
             event.stopPropagation();
             if(!isRunning){
                 startMove(event, container);
+                isRunning = true;
             }
         });
 

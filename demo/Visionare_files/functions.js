@@ -1495,7 +1495,11 @@ function initIntroAnimations() {
     $sectionSlidesHolder.mousewheel(function(event) {
         event.stopPropagation();
         // 这里是关键 ，检查是否正在运动，如果不在运动就接着执行下一个task
+        console.log("actionsIntro.running");
+        console.log(actionsIntro.running)
         if (!actionsIntro.running) {
+            console.log("actionsIntro.running");
+            console.log(actionsIntro.running)
             onMouseWheel(event, actionsIntro);
         }
     });
