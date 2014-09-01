@@ -40,9 +40,19 @@
     function startMove(event, container) {
         var deltaY = getWheelDelta(event);
         console.log(deltaY);
+        var top = parseInt(container.style.top, 10);
         if (deltaY < 0) {
-            console.log(container.style.top);
-            container.style.top = parseInt(container.style.top, 10) - 100 + "%";
+            if(top > -300){
+                container.style.top = top - 100 + "%";
+            }else{
+                container.style.top = "-300%";
+            }
+        }else{
+            if(top < 0){
+                container.style.top = parseInt(container.style.top, 10) + 100 + "%";
+            }else{
+                container.style.top = "0";
+            }
         }
         var timer = setTimeout(function() {
             isRunning = false;
