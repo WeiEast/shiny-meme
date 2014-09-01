@@ -1,8 +1,23 @@
 (function() {
 
-    var fakeEvent = {
-        deltaY: 0
-    };
+    function getCssStyle(elem, prop) {
+        var strValue = "";
+        //非IE
+        if (document.defaultView && document.defaultView.getComputedStyle) {
+            strValue = document.defaultView.getComputedStyle(elem, "").getPropertyValue(prop);
+        } else if (elem.currentStyle) {
+            // IE
+            prop = prop.replace(/\-(\w)/g, function(strMatch, p1) {
+                return p1.toUpperCase();
+            });
+            strValue = elem.currentStyle[prop];
+        }
+        return strValue;
+    }
+    var wait = 2000;
+        var fakeEvent = {
+            deltaY: 0
+        };
     var isRunning = false;
 
     function onMouseWheel(event) {
@@ -29,9 +44,9 @@
             console.log(container.style.top);
             container.style.top = parseInt(container.style.top, 10) - 100 + "%";
         }
-        var timer = setTimeout(function(){
+        var timer = setTimeout(function() {
             isRunning = false;
-        }, 3000);
+        }, wait);
     }
     window.addEventListener("load", function() {
 
@@ -41,7 +56,7 @@
         container.style.top = "0";
         addMouseWheelEvent(container, function(event) {
             event.stopPropagation();
-            if(!isRunning){
+            if (!isRunning) {
                 startMove(event, container);
                 isRunning = true;
             }
