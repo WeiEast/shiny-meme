@@ -1,5 +1,11 @@
 (function() {
 
+
+    function Sequence(squence){
+        this.tasks = sequence || [];
+    }
+
+
     function getCssStyle(elem, prop) {
         var strValue = "";
         //非IE
@@ -15,14 +21,7 @@
         return strValue;
     }
     var wait = 2000;
-        var fakeEvent = {
-            deltaY: 0
-        };
     var isRunning = false;
-
-    function onMouseWheel(event) {
-
-    }
 
     function getWheelDelta(event) {
         if (event.wheelDelta) {
@@ -58,11 +57,21 @@
             isRunning = false;
         }, wait);
     }
+
+
+
+
     window.addEventListener("load", function() {
 
         var winH = document.body.clientHeight;
         var scrollTop = document.body.scrollTop;
         var container = document.getElementById("main-sections");
+
+
+
+
+
+
         container.style.top = "0";
         addMouseWheelEvent(container, function(event) {
             event.stopPropagation();
