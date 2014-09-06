@@ -41,6 +41,7 @@ shiny-meme
 [3D FLIPPING CIRCLE WITH CSS3 AND JQUERY](http://tympanus.net/Tutorials/3DFlippingCircle/)
 
 [SWATCH BOOK WITH CSS3 AND JQUERY](http://tympanus.net/Tutorials/SwatchBook/index2.html)
+
 ~~[3D Hover Effect for Thumbnails and Images](http://thecodeplayer.com/walkthrough/3d-thumbnail-image-hover-effect)~~
 
 [Google Doodle animation in CSS3 without Javascript](http://thecodeplayer.com/walkthrough/google-doodle-animation-in-css3-without-javascript)
