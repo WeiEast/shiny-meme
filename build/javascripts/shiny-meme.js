@@ -1,55 +1,30 @@
 (function() {
 
-
-    function Sequence(squence){
+    function Sequence(squence) {
         this.tasks = sequence || [];
     }
 
-
-    function getCssStyle(elem, prop) {
-        var strValue = "";
-        //非IE
-        if (document.defaultView && document.defaultView.getComputedStyle) {
-            strValue = document.defaultView.getComputedStyle(elem, "").getPropertyValue(prop);
-        } else if (elem.currentStyle) {
-            // IE
-            prop = prop.replace(/\-(\w)/g, function(strMatch, p1) {
-                return p1.toUpperCase();
-            });
-            strValue = elem.currentStyle[prop];
-        }
-        return strValue;
+    function addMouseWheelEvent(elem, handler) {
+        elem.addEventListener('mousewheel', handler);
+        elem.addEventListener('DOMMouseScroll', handler);
     }
     var wait = 2000;
     var isRunning = false;
 
-    function getWheelDelta(event) {
-        if (event.wheelDelta) {
-            return event.wheelDelta;
-        } else {
-            return -event.detail * 40;
-        }
-    }
-
-    function addMouseWheelEvent(elem, handler) {
-        elem.addEventListener('mousewheel', handler, false);
-        elem.addEventListener('DOMMouseScroll', handler, false);
-    }
-
     function startMove(event, container) {
-        var deltaY = getWheelDelta(event);
+        var deltaY = shiny.Event.getWheelDelta(event);
         console.log(deltaY);
         var top = parseInt(container.style.top, 10);
         if (deltaY < 0) {
-            if(top > -300){
+            if (top > -300) {
                 container.style.top = top - 100 + "%";
-            }else{
+            } else {
                 container.style.top = "-300%";
             }
-        }else{
-            if(top < 0){
+        } else {
+            if (top < 0) {
                 container.style.top = parseInt(container.style.top, 10) + 100 + "%";
-            }else{
+            } else {
                 container.style.top = "0";
             }
         }
@@ -58,22 +33,14 @@
         }, wait);
     }
 
-
-
-
     window.addEventListener("load", function() {
 
         var winH = document.body.clientHeight;
         var scrollTop = document.body.scrollTop;
         var container = document.getElementById("main-sections");
 
-
-
-
-
-
         container.style.top = "0";
-        addMouseWheelEvent(container, function(event) {
+        shiny.Event.addMouseWheelEvent(container, function(event) {
             event.stopPropagation();
             if (!isRunning) {
                 startMove(event, container);
@@ -82,6 +49,12 @@
         });
 
     }, false);
+
+})();
+
+
+// scroll controler
+(function() {
 
 })();
 ;(function() {
@@ -110,7 +83,7 @@
     shiny.namespace("Constant");
     shiny.namespace("Event.addLoadEvent");
 
-    _s_.Event.addLoadEvent = function(type, elem, handler) {
+    _s_.Event.addEvent = function(type, elem, handler) {
         var self = this;
         if (elem.addEventListener) {
             self = (function() {
@@ -127,7 +100,7 @@
         }
     };
 
-    _s_.Event.removeLoadEvent = function(type, elem, handler) {
+    _s_.Event.removeEvent = function(type, elem, handler) {
         var self = this;
         if (elem.removeEventListener) {
             self = (function() {
@@ -144,11 +117,43 @@
         }
     };
 
+    _s_.Event.getWheelDelta = function(event) {
+        if (event.wheelDelta) {
+            return event.wheelDelta;
+        } else {
+            return -event.detail * 40;
+        }
+    };
+
+    _s_.Event.addMouseWheelEvent = function(elem, handler) {
+        var self = this;
+        self.addEvent('mousewheel', elem, handler);
+        self.addEvent('DOMMouseScroll', elem, handler);
+    };
+
+    _s_.Dom.getCssStyle = function(elem, prop) {
+        var strValue = "";
+        //非IE
+        if (document.defaultView && document.defaultView.getComputedStyle) {
+            strValue = document.defaultView.getComputedStyle(elem, "").getPropertyValue(prop);
+        } else if (elem.currentStyle) {
+            // IE
+            prop = prop.replace(/\-(\w)/g, function(strMatch, p1) {
+                return p1.toUpperCase();
+            });
+            strValue = elem.currentStyle[prop];
+        }
+        return strValue;
+    };
+
     shiny.Constant.backgroundColor = [
         "rgb(168, 203, 213)",
         "rgb(238, 126, 114)",
         "rgb(228, 190, 108)",
         "rgb(156, 145, 191)"
     ];
+
+
+
     window.shiny = shiny;
 })();

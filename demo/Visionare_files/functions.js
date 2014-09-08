@@ -1049,7 +1049,7 @@ function initIntroAnimations() {
     var intro = new Action();
     intro.enterAction = function(from, to) {
         hideSkipButton();
-
+        console.log(1111);
         resetIntroAnimations();
         introAnimationsSequence.run();
 
