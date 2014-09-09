@@ -87,13 +87,6 @@
         return strValue;
     };
 
-    shiny.Constant.backgroundColor = [
-        "rgb(168, 203, 213)",
-        "rgb(238, 126, 114)",
-        "rgb(228, 190, 108)",
-        "rgb(156, 145, 191)"
-    ];
-
 
 
     window.shiny = shiny;

@@ -247,7 +247,7 @@ var $body = $(document.body);
     };
 })();
 
-// scroll controls
+// scroll controls 这里是滚动控制
 (function() {
     function goto(from, to, instance) {
         instance.running = false;
@@ -294,6 +294,7 @@ var $body = $(document.body);
             goto(instance.current, instance.current+1, instance);
         }
     }
+
     function prev(instance) {
         if (instance.current > 0) {
             goto(instance.current, instance.current-1, instance);
@@ -309,7 +310,7 @@ var $body = $(document.body);
         length: 0
     };
 
-    function Actions() {
+    function Actions() {       
         var instance = this;
         instance.actionsList = [];
         instance.initied = false;
@@ -1487,19 +1488,17 @@ function initIntroAnimations() {
     function onMouseWheel(event, instance) {
         if (event.deltaY < 0) {
             instance.next(instance);
+            console.log(instance);
         } else {
             instance.prev(instance);
+            console.log(instance.next);
         }
     }
 
     $sectionSlidesHolder.mousewheel(function(event) {
         event.stopPropagation();
         // 这里是关键 ，检查是否正在运动，如果不在运动就接着执行下一个task
-        console.log("actionsIntro.running");
-        console.log(actionsIntro.running)
         if (!actionsIntro.running) {
-            console.log("actionsIntro.running");
-            console.log(actionsIntro.running)
             onMouseWheel(event, actionsIntro);
         }
     });

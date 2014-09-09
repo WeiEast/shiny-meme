@@ -1,13 +1,24 @@
+// scroll control 滚动控制
 (function() {
-    var Constant = {
-        backgroundColor: [
-            "rgb(168, 203, 213)",
-            "rgb(238, 126, 114)",
-            "rgb(228, 190, 108)",
-            "rgb(156, 145, 191)"
-        ]
-    };
+    function Actions() {
+        this.actionsList = [];
+        this.initied = false;
+        this.running = false;
+        this.canEnter = false;
+        this.current = 0;
+        this.previous = -1;
+        this.timeout = null;
+    }
 
+    Actions.prototype.add = function() {};
+    Actions.prototype.goto = function() {};
+    Actions.prototype.next = function() {};
+    Actions.prototype.prev = function() {};
+
+    window.Actions = Actions;
+})();
+
+(function() {
     function Sequence(sequence) {
         this.tasks = sequence || [];
     }
@@ -43,6 +54,9 @@
 
     function launch(instance) {
         // 如果正在y运动，结束
+
+        console.log(instance.running);
+
         if (instance.runing) {
             return instance;
         }
@@ -91,6 +105,24 @@
 
         return instance.stop();
     }
+
+    window.Sequence = Sequence;
+
+})();
+
+
+(function() {
+    var Constant = {
+        backgroundColor: [
+            "rgb(168, 203, 213)",
+            "rgb(238, 126, 114)",
+            "rgb(228, 190, 108)",
+            "rgb(156, 145, 191)"
+        ]
+    };
+
+
+
     var Action = function() {};
     Action.prototype = {
         enterAction: null,
@@ -99,14 +131,11 @@
         length: 0
     };
 
-    function addMouseWheelEvent(elem, handler) {
-        elem.addEventListener('mousewheel', handler);
-        elem.addEventListener('DOMMouseScroll', handler);
-    }
     var wait = 2000;
     var isRunning = false;
 
-    function startMove(event, container) {
+
+    function startMove(instance) {
         // var deltaY = shiny.Event.getWheelDelta(event);
         // var top = parseInt(container.style.top, 10);
         // if (deltaY < 0) {
@@ -123,13 +152,19 @@
         //     }
         // }
 
+        var deltaY = shiny.Event.getWheelDelta(event);
+        console.log(deltaY);
+        if (deltaY < 0) {
+            instance.next(instance);
+        } else {
+            instance.prev(instance);
+        }
+
+        launch(instance);
         var timer = setTimeout(function() {
             isRunning = false;
         }, wait);
     }
-
-
-
 
 
 
@@ -143,7 +178,7 @@
         shiny.Event.addMouseWheelEvent(container, function(event) {
             event.stopPropagation();
             if (!isRunning) {
-                startMove(event, container);
+                startMove(squence);
                 isRunning = true;
             }
         });
@@ -173,11 +208,9 @@
             container.style.top = "-300%";
         };
 
-        var squence = new Sequence();
-        squence.tasks = [welcome, prpfile, skill, experience];
-
-        console.log(squence);
-
+        var actions = new Actions();
+        actions.actionsList = [welcome, prpfile, skill, experience];
+        console.log(actions);
 
     }, false);
 
