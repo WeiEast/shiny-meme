@@ -1,0 +1,251 @@
+@charset"UTF-8";
+/**
+ * 
+ * @authors CrispElite (zhanglun1410@gmail.com)
+ * @date    2014-03-21 19:45:35
+ * @version 1.0
+ */
+@import "variable";
+@import "reset";
+
+#maskCanvas{
+	display:$db;
+}
+
+.area_bg {
+    max-width:100%;
+}
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+.header_nav {
+    height: 80px;
+    padding-top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    text-align:center;
+    li {
+        display:inline-block;
+        font-size:1.5em;
+        vertical-align:middle;
+        padding:4px 20px;
+        a {
+            color:#fff;
+            &:link {
+                color:#fff;
+            }
+
+        }
+    }
+
+}
+
+#portrait {
+    width:100px;
+    height:100px;
+    padding:5px;
+    background:#fff;
+    border-radius:100%;
+    font-size:0;
+    -webkit-box-shadow:0 5px 7px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:0 5px 7px rgba(0, 0, 0, 0.5);
+    -o-box-shadow:0 5px 7px rgba(0, 0, 0, 0.5);
+    box-shadow:0 5px 7px rgba(0, 0, 0, 0.5);
+    img {
+        max-width:100%;
+        border-radius:100%;
+        -webkit-transition:all 0.4s ease-out 0;
+        -moz-transition:all 0.4s ease-out 0;
+        -o-transition:all 0.4s ease-out 0;
+        transition:all 0.4s ease-out 0;
+        &:hover {
+            -webkit-transform:rotate(360deg);
+            -moz-transform:rotate(360deg);
+            -o-transform:rotate(360deg);
+            transform:rotate(360deg);
+        }
+    }
+}
+#welcome {
+    width:100%;
+    height:100%;
+    padding-top:1px;
+    /*background: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-hero.jpg) no-repeat center;*/
+    background:url(../images/welcome.jpg) no-repeat center;
+    background-size:cover;
+    /*background-attachment: fixed;*/
+    .greet {
+        font-size:4em;
+        color:#fff;
+        text-align:center;
+        margin-top:-450px;
+        span {
+            display:block;
+            font-size:16px;
+        }
+        b {
+            display:block;
+            animation:arrow 1s linear infinite;
+            -webkit-animation:arrow 1s linear infinite;
+        }
+    }
+}
+#area1 {
+    background: url(http://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-listen-free.jpg) no-repeat center;
+    background:url(../images/back1.jpg) no-repeat center;
+}
+#area2 {
+    background: url(http://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-discover.jpg) no-repeat center;
+    background:url(../images/back2.jpg) no-repeat center;
+}
+#area3 {
+    background: url(http://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-all-music.jpg) no-repeat center;
+    background:url(../images/back3.jpg) no-repeat center;
+}
+#area4 {
+    background: url(http://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-social.jpg) no-repeat center;
+    background:url(../images/back4.jpg) no-repeat center;
+}
+#area5 {
+    /*background: url(http://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-browse.jpg) no-repeat center;*/
+    background:url(../images/back5.jpg) no-repeat center bottom;
+}
+#area1, #area2, #area3, #area4 {
+    /*   width: 100%;
+    height:100%;*/
+    overflow:hidden;
+    background-attachment: fixed;
+    background-size:cover;
+}
+.area {
+    /*height:100%;*/
+    /*height:480px;*/
+    height:420px;
+}
+.scroller-main {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    /*background-attachment:fixed;*/
+}
+.container {
+    overflow:hidden;
+    width:1008px;
+    padding:1em 0;
+    margin:0 auto;
+    display:table;
+}
+.container h1 {
+    font-size:2.5em;
+    /*margin-top:5px;*/
+}
+.word {
+    width:50%;
+    display: table-cell;
+    vertical-align: middle;
+    padding:0 30px;
+}
+.word p {
+    font-size:1em;
+    color:#343434;
+    font-weight:bold;
+}
+.picture {
+    width:50%;
+    display: table-cell;
+    vertical-align:middle;
+}
+.picture img {
+    max-width:100%;
+}
+.floor {
+    width:100%;
+    padding:50px 0;
+}
+.yellow {
+    background: #eeda50;
+    color:#fff;
+}
+.green {
+    background: #87c985;
+    color:#fff;
+}
+.green p {
+    color:#fff;
+}
+.red {
+    background:#ef3f3d;
+    color:#fff;
+}
+.red p {
+    color:#fff;
+}
+/*loading*/
+ #loading {
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:10001;
+    background:#345 url(http://x.srcdd.com/farm1/3f3cd9/9f2128d6/bg.jpg) center;
+    background-size:cover;
+}
+#loadDisk {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-80px;
+    margin-left:-80px;
+    padding:5px;
+    border-radius:100%;
+    background:#fff;
+    font-size:0;
+    animation:LOAD 2s linear infinite;
+    -webkit-animation:LOAD 2s linear infinite;
+}
+.wannering {
+    width:100%;
+    height:100%;
+    color:#fff;
+    text-align:center;
+}
+#loadDisk img {
+    border-radius:100%;
+}
+@keyframes arrow {
+    from {
+        margin-top:0;
+    }
+    to {
+        margin-top:10px;
+    }
+}
+@-webkit-keyframes arrow {
+    from {
+        margin-top:0;
+    }
+    to {
+        margin-top:10px;
+    }
+}
+@keyframes LOAD {
+    from {
+        transform:rotate(360deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+@-webkit-keyframes LOAD
+/*Safari and Chrome*/
+ {
+    from {
+        -webkit-transform:rotate(0deg);
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+    }
+}
