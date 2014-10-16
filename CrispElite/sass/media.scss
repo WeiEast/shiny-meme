@@ -1,36 +1,60 @@
+@charset "utf-8";
 // @media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ }
 // @media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
 // @media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
 // @media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 // @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 // @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+// 每个bg image的高度
+
+$desktop: 1024px;
+$tablet: 960px;
+$mini: 640px;
+$mobile: 400px;
+
+
+@mixin area-bg($img, $size){  
+    background-image:url("../images/" + $img + "x" + $size + ".jpg");
+}
+
 .area {
-    height:420px;
+    height:450px;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
 #area1 {
-    background:url(../images/back1.jpg) no-repeat center;
+    background-image:url(../images/back1x1024px.jpg) ;
 }
 #area2 {
-    background:url(../images/back2.jpg) no-repeat center;
+    background-image:url(../images/back2x1024px.jpg) ;
 }
 #area3 {
-    background:url(../images/back3.jpg) no-repeat center;
+    background-image:url(../images/back3x1024px.jpg) ;
 }
 #area4 {
-    background:url(../images/back4.jpg) no-repeat center;
+    background-image:url(../images/back4x1024px.jpg) ;
 }
 #area5 {
-    background:url(../images/back5.jpg) no-repeat center bottom;
+    background-image:url(../images/back5x1024px.jpg) ;
 }
+
 #area1, #area2, #area3, #area4 {
     overflow:hidden;
     background-attachment: fixed;
     background-size:cover;
 }
 
-@media screen and (max-width: 960px){
+
+@media screen and (max-width: $desktop){
     #area1{
-        background:url(../images/back1x960.jpg) no-repeat center;
+        @include area-bg("back1", $desktop);
+    }
+}
+
+@media screen and (max-width: $tablet){
+    #area1{
+        @include area-bg("back1", $tablet);
     }
 }
