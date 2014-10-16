@@ -1,0 +1,36 @@
+// @media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */ }
+// @media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+// @media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+// @media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+// @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+// @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+.area {
+    height:420px;
+}
+
+#area1 {
+    background:url(../images/back1.jpg) no-repeat center;
+}
+#area2 {
+    background:url(../images/back2.jpg) no-repeat center;
+}
+#area3 {
+    background:url(../images/back3.jpg) no-repeat center;
+}
+#area4 {
+    background:url(../images/back4.jpg) no-repeat center;
+}
+#area5 {
+    background:url(../images/back5.jpg) no-repeat center bottom;
+}
+#area1, #area2, #area3, #area4 {
+    overflow:hidden;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+@media screen and (max-width: 960px){
+    #area1{
+        background:url(../images/back1x960.jpg) no-repeat center;
+    }
+}

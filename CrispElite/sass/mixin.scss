@@ -1,0 +1,20 @@
+/**/
+
+@mixin transform-rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    transform: rotate($deg);
+}
+@mixin box-shadow($para){
+    -webkit-box-shadow:$para;
+    -moz-box-shadow:$para;
+    -o-box-shadow:$para;
+    box-shadow:$para;
+}
+@mixin transition($para){
+    -webkit-transition:$para;
+    -moz-transition:$para;
+    -o-transition:$para;
+    transition:$para;
+}
