@@ -51,10 +51,24 @@ $mobile: 400px;
     #area1{
         @include area-bg("back1", $desktop);
     }
+    #area2{
+        @include area-bg("back2", $desktop);
+    }
 }
 
 @media screen and (max-width: $tablet){
     #area1{
         @include area-bg("back1", $tablet);
+    }
+    #area2{
+        @include area-bg("back2", $tablet);
+    }
+}
+@media screen and (max-width: $mini){
+    #area1{
+        @include area-bg("back1", $mini);
+    }
+    #area2{
+        @include area-bg("back2", $mini);
     }
 }
