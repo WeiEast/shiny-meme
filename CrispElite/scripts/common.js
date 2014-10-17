@@ -55,6 +55,13 @@ $(document).ready(function() {
     //         backgroundPosition: "center " + parseInt(-(scrollTop - 458 * 5) * 0.2) + "px"
     //     });
     // });
+    $(window).scroll(function() {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollTop);
+        if(scrollTop >= 100){
+            $(".greet").addClass("trigger");
+        }
+    });    
 
 });
 
@@ -95,9 +102,9 @@ $(document).ready(function() {
                 top: "10px"
             }, 1000);
             $("#loading").fadeOut(1000, function() {
-                $(".greet").animate({
-                    marginTop: "20px"
-                }, 2000);
+                // $(".greet").animate({
+                //     marginTop: "-400px"
+                // }, 2000);
             });
         };
     })();

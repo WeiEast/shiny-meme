@@ -72,6 +72,10 @@ header {
         color:#fff;
         text-align:center;
         margin-top:-450px;
+        &.trigger{
+            margin-top:400px;
+        }
+        @include transition(all 1.5s);
         span {
             display:block;
             font-size:16px;
