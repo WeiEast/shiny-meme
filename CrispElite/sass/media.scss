@@ -5,88 +5,106 @@
 // @media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 // @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
 // @media (min-width:1281px) { /* hi-res laptops and desktops */ }
-
 // 每个bg image的高度
-
-$desktop: 1024px;
-$tablet: 960px;
-$mini: 640px;
-$mobile: 400px;
-
-
-@mixin area-bg($img, $size){  
-    background-image:url("../images/" + $img + "x" + $size + ".jpg");
+$desktop: 1025px;
+$tablet: 961px;
+$mini: 641px;
+$smaller-tablets: 481px;
+$mobile: 320px;
+@mixin area-bg($img, $size) {
+    background-image: url("../images/" + $img +"x" + $size +".jpg");
 }
-
 .area {
-    height:450px;
-    background-repeat:no-repeat;
-    background-position:center;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
-
 #area1 {
-    background-image:url(../images/back1x1024px.jpg) ;
+    background-image: url(../images/back1x1024px.jpg);
 }
 #area2 {
-    background-image:url(../images/back2x1024px.jpg) ;
+    background-image: url(../images/back2x1024px.jpg);
 }
 #area3 {
-    background-image:url(../images/back3x1024px.jpg) ;
+    background-image: url(../images/back3x1024px.jpg);
 }
 #area4 {
-    background-image:url(../images/back4x1024px.jpg) ;
+    background-image: url(../images/back4x1024px.jpg);
 }
 #area5 {
-    background-image:url(../images/back5x1024px.jpg) ;
+    background-image: url(../images/back5x1024px.jpg);
 }
-
 #area1, #area2, #area3, #area4 {
-    overflow:hidden;
+    overflow: hidden;
     background-attachment: fixed;
-    background-size:cover;
+    background-size: cover;
 }
 
 
-@media screen and (max-width: $desktop){
-    #area1{
-        @include area-bg("back1", $desktop);
+
+
+
+
+@media screen and (min-width: $mini) {
+    #area1 {
+        @include area-bg("back1", $mini);
     }
-    #area2{
-        @include area-bg("back2", $desktop);
+    #area2 {
+        @include area-bg("back2", $mini);
     }
-   #area3{
-        @include area-bg("back3", $desktop);
+    #area3 {
+        @include area-bg("back3", $mini);
     }
-    #area4{
-        @include area-bg("back4", $desktop);
+    #area4 {
+        @include area-bg("back4", $mini);
     }
 }
 
-@media screen and (max-width: $tablet){
-    #area1{
+
+@media screen and (max-width: $tablet) {
+    #area1 {
         @include area-bg("back1", $tablet);
     }
-    #area2{
+    #area2 {
         @include area-bg("back2", $tablet);
     }
-   #area3{
+    #area3 {
         @include area-bg("back3", $tablet);
     }
-    #area4{
+    #area4 {
         @include area-bg("back4", $tablet);
     }
 }
-@media screen and (max-width: $mini){
-    #area1{
-        @include area-bg("back1", $mini);
+
+@media screen and (min-width: $desktop) {
+    .word {
+        width: 100%;
+        text-align: center;
     }
-    #area2{
-        @include area-bg("back2", $mini);
+    #area1 {
+        @include area-bg("back1", $desktop);
     }
-   #area3{
-        @include area-bg("back3", $mini);
+    #area2 {
+        @include area-bg("back2", $desktop);
     }
-    #area4{
-        @include area-bg("back4", $mini);
+    #area3 {
+        @include area-bg("back3", $desktop);
+    }
+    #area4 {
+        @include area-bg("back4", $desktop);
+    }
+
+
+    .pic-profile {
+        background: url(../images/zl.png) no-repeat center;
+    }
+    .pic-label {
+        background: url(../images/label.png) no-repeat center;
+    }
+    .pic-project {
+        background: url(../images/project.png) no-repeat center;
+    }
+    .pic-tools {
+        background: url(../images/tools.png) no-repeat center;
     }
 }
